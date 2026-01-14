@@ -86,9 +86,9 @@ export function Contact() {
                       <div className="w-14 h-14 rounded-full gradient-bg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                         <link.icon className="w-7 h-7 text-white" />
                       </div>
-                      <h3 className="font-semibold mb-1 flex items-center justify-center gap-1">
+                      <h3 className="font-semibold mb-1 relative inline-flex items-center justify-center">
                         {link.label}
-                        <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <ArrowUpRight className="w-4 h-4 absolute -right-5 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </h3>
                       <p className="text-sm text-primary mb-2">{link.value}</p>
                       <p className="text-sm text-muted-foreground">{link.description}</p>
