@@ -1,23 +1,33 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { ExternalLink, Github, X, Star, Brain, Globe, Smartphone, FolderCode } from "lucide-react"
-import { SectionHeading } from "@/components/shared/section-heading"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { projects, projectCategories, type Project } from "@/data/projects"
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  ExternalLink,
+  Github,
+  X,
+  Star,
+  Heart,
+  Brain,
+  Globe,
+  Smartphone,
+  FolderCode,
+} from "lucide-react";
+import { SectionHeading } from "@/components/shared/section-heading";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { projects, projectCategories, type Project } from "@/data/projects";
 
 const categoryIcons = {
   ai: Brain,
   web: Globe,
   mobile: Smartphone,
   other: FolderCode,
-}
+};
 
 function ProjectCard({ project, onClick }: { project: Project; onClick: () => void }) {
-  const CategoryIcon = categoryIcons[project.category]
+  const CategoryIcon = categoryIcons[project.category];
   return (
     <motion.div
       layout
@@ -31,7 +41,7 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: () => vo
         onClick={onClick}
       >
         {/* Preview Area */}
-        <div className="relative h-48 bg-gradient-to-br from-purple-900/50 to-blue-900/50 flex items-center justify-center overflow-hidden">
+        <div className="relative h-48 bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           <CategoryIcon className="w-12 h-12 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
           <motion.div
@@ -47,12 +57,20 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: () => vo
             <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
               {project.title}
             </h3>
-            {project.stars && (
-              <span className="flex items-center gap-1 text-sm text-muted-foreground">
-                <Star className="w-4 h-4 fill-yellow-500 text-yellow-500" />
-                {project.stars}
-              </span>
-            )}
+            <div className="flex items-center gap-2">
+              {project.isSocialImpact && (
+                <Badge variant="secondary" className="bg-orange-500/10 text-orange-600 border-orange-500/20">
+                  <Heart className="w-3 h-3 mr-1 fill-current" />
+                  Impact
+                </Badge>
+              )}
+              {project.stars && (
+                <span className="flex items-center gap-1 text-sm text-muted-foreground">
+                  <Star className="w-4 h-4 fill-yellow-500 text-yellow-500" />
+                  {project.stars}
+                </span>
+              )}
+            </div>
           </div>
           <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
             {project.description}
@@ -73,11 +91,11 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: () => vo
         </CardContent>
       </Card>
     </motion.div>
-  )
+  );
 }
 
 function ProjectModal({ project, onClose }: { project: Project; onClose: () => void }) {
-  const CategoryIcon = categoryIcons[project.category]
+  const CategoryIcon = categoryIcons[project.category];
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -114,6 +132,12 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
               {project.category === "mobile" && "Mobile Application"}
               {project.category === "other" && "Software Project"}
             </p>
+            {project.isSocialImpact && (
+              <Badge variant="secondary" className="mt-3 bg-orange-500/10 text-orange-600 border-orange-500/20">
+                <Heart className="w-3 h-3 mr-1 fill-current" />
+                Social Impact Project
+              </Badge>
+            )}
           </div>
         </div>
 
@@ -154,7 +178,10 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           {/* Actions */}
           <div className="flex flex-col sm:flex-row gap-4">
             {project.demoUrl && (
-              <Button asChild className="gradient-bg hover:opacity-90 text-white border-0">
+              <Button
+                asChild
+                className="gradient-bg hover:opacity-90 text-white border-0"
+              >
                 <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="w-4 h-4 mr-2" />
                   Live Demo
@@ -173,17 +200,17 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
         </div>
       </motion.div>
     </motion.div>
-  )
+  );
 }
 
 export function Projects() {
-  const [activeCategory, setActiveCategory] = useState<string>("all")
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+  const [activeCategory, setActiveCategory] = useState<string>("all");
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const filteredProjects =
     activeCategory === "all"
       ? projects
-      : projects.filter((p) => p.category === activeCategory)
+      : projects.filter((p) => p.category === activeCategory);
 
   return (
     <section id="projects" className="py-20 md:py-32">
@@ -202,9 +229,7 @@ export function Projects() {
               size="sm"
               onClick={() => setActiveCategory(category.value)}
               className={
-                activeCategory === category.value
-                  ? "gradient-bg text-white border-0"
-                  : ""
+                activeCategory === category.value ? "gradient-bg text-white border-0" : ""
               }
             >
               {category.label}
@@ -213,7 +238,10 @@ export function Projects() {
         </div>
 
         {/* Projects Grid */}
-        <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <motion.div
+          layout
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
+        >
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project) => (
               <ProjectCard
@@ -236,5 +264,5 @@ export function Projects() {
         </AnimatePresence>
       </div>
     </section>
-  )
+  );
 }

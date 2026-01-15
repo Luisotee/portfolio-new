@@ -2,7 +2,6 @@ import { Hero } from "@/components/sections/hero"
 import { About } from "@/components/sections/about"
 import { Experience } from "@/components/sections/experience"
 import { Projects } from "@/components/sections/projects"
-import { Volunteer } from "@/components/sections/volunteer"
 import { Contact } from "@/components/sections/contact"
 
 export default function Home() {
@@ -12,7 +11,6 @@ export default function Home() {
       <About />
       <Experience />
       <Projects />
-      <Volunteer />
       <Contact />
     </>
   )

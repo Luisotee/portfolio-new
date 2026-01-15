@@ -10,6 +10,7 @@ export interface Project {
   features: string[]
   category: "web" | "ai" | "mobile" | "other"
   stars?: number
+  isSocialImpact?: boolean
 }
 
 export const projects: Project[] = [
@@ -63,6 +64,23 @@ export const projects: Project[] = [
     ],
     category: "ai",
     githubUrl: "https://github.com/langchain-ai/langchainjs/pull/5329",
+  },
+  {
+    id: "earth-defenders",
+    title: "Earth Defenders Assistant",
+    description: "AI tools for environmental conservation, supporting indigenous communities with offline-capable assistants.",
+    longDescription:
+      "Developed AI tools for environmental conservation, creating audio-first AI assistants that work offline to support indigenous communities and environmental defenders in remote areas. Won 3rd place in Amazon Challenge, securing R$ 100,000 in funding.",
+    technologies: ["Python", "LangChain", "Smolagents", "Mem0", "Offline AI"],
+    features: [
+      "Built offline-capable AI assistants for areas with limited connectivity",
+      "Won 3rd place in Amazon Challenge, securing R$ 100,000 in funding",
+      "Created tools for indigenous communities to document environmental threats",
+      "Developed multi-language support for diverse communities",
+    ],
+    category: "ai",
+    githubUrl: "https://github.com/Luisotee/earth-defenders-assistant",
+    isSocialImpact: true,
   },
 ]
 

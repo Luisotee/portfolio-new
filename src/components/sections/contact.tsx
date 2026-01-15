@@ -46,7 +46,7 @@ const itemVariants = {
 
 export function Contact() {
   return (
-    <section id="contact" className="py-20 md:py-32">
+    <section id="contact" className="py-20 md:py-32 bg-muted/30">
       <div className="container mx-auto px-4">
         <SectionHeading
           title="Get in Touch"
@@ -99,25 +99,6 @@ export function Contact() {
             ))}
           </motion.div>
 
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-center mt-16"
-          >
-            <p className="text-lg text-muted-foreground mb-4">
-              Prefer a quick email? Here&apos;s my direct link:
-            </p>
-            <a
-              href="mailto:luisotaviomgrcont@gmail.com"
-              className="inline-flex items-center gap-2 text-xl font-semibold gradient-text hover:opacity-80 transition-opacity"
-            >
-              luisotaviomgrcont@gmail.com
-              <ArrowUpRight className="w-5 h-5" />
-            </a>
-          </motion.div>
         </div>
       </div>
     </section>
