@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { SectionHeading } from "@/components/shared/section-heading"
 import { Badge } from "@/components/ui/badge"
+import { GraduationCap } from "lucide-react"
 
 const techStack = {
   "Frontend": [
@@ -22,6 +23,7 @@ const techStack = {
   ],
   "AI & ML": [
     "LangChain",
+    "Pydantic AI",
     "CrewAI",
     "Smolagents",
     "Mem0",
@@ -36,6 +38,21 @@ const techStack = {
     "Linux",
   ],
 }
+
+const education = [
+  {
+    degree: "BS in Computer Engineering",
+    school: "Sorocaba University of Engineering",
+    location: "Sorocaba, Brazil",
+    period: "2019 - 2023",
+  },
+  {
+    degree: "BS in System Development",
+    school: "Pontifical Catholic University of Paraná",
+    location: "Londrina, Brazil",
+    period: "2024 - Present",
+  },
+]
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -77,13 +94,11 @@ export function About() {
               and LLM-based solutions.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Currently working at{" "}
-              <span className="text-foreground font-medium">Akdo.ai</span>, I build
-              enterprise training platforms with AI-powered content generation.
-              I specialize in{" "}
+              I specialize in building enterprise platforms with AI-powered content generation,
+              leveraging{" "}
               <span className="text-foreground font-medium">LangChain</span>,{" "}
               <span className="text-foreground font-medium">Next.js</span>, and{" "}
-              <span className="text-foreground font-medium">Node.js</span> for building
+              <span className="text-foreground font-medium">Node.js</span> to create
               intelligent chatbots and web applications.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
@@ -120,6 +135,23 @@ export function About() {
                 </div>
               </motion.div>
             ))}
+
+            {/* Education */}
+            <motion.div variants={itemVariants}>
+              <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-2">
+                <GraduationCap className="w-4 h-4" />
+                Education
+              </h3>
+              <div className="space-y-3">
+                {education.map((edu) => (
+                  <div key={edu.degree} className="text-sm">
+                    <p className="font-medium">{edu.degree}</p>
+                    <p className="text-muted-foreground">{edu.school}</p>
+                    <p className="text-muted-foreground text-xs">{edu.period}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

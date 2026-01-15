@@ -32,21 +32,21 @@ export const projects: Project[] = [
     stars: 125,
   },
   {
-    id: "earth-defenders",
-    title: "Earth Defenders Assistant",
-    description: "Audio-first AI assistants for environmental conservation that work offline.",
+    id: "ai-personal-assistant",
+    title: "AI Personal Assistant",
+    description: "AI agent for WhatsApp with RAG knowledge base and automated expense tracking.",
     longDescription:
-      "Platform for creating audio-first AI assistants designed to help environmental defenders and indigenous communities. Built to work offline in remote areas with limited connectivity, featuring voice interactions and local processing.",
-    technologies: ["Python", "LangChain", "Smolagents", "Mem0", "Audio Processing"],
+      "A personal AI assistant that runs on WhatsApp, featuring a RAG-powered knowledge base for contextual responses and automated expense tracking capabilities. Built with a modern stack combining Python backend with Next.js frontend.",
+    technologies: ["Python", "FastAPI", "TypeScript", "Next.js", "PostgreSQL", "pgvector"],
     features: [
-      "Offline-capable AI processing",
-      "Audio-first interaction design",
-      "Multi-language support",
-      "Low-resource device optimization",
+      "RAG-powered knowledge base",
+      "Automated expense tracking",
+      "WhatsApp integration",
+      "Vector search with pgvector",
+      "Full-stack architecture",
     ],
     category: "ai",
-    githubUrl: "https://github.com/Luisotee/earth-defenders-assistant",
-    stars: 13,
+    githubUrl: "https://github.com/Luisotee/ai-personal-assistant",
   },
   {
     id: "langchainjs-contribution",
@@ -63,22 +63,6 @@ export const projects: Project[] = [
     ],
     category: "ai",
     githubUrl: "https://github.com/langchain-ai/langchainjs/pull/5329",
-  },
-  {
-    id: "help-facul",
-    title: "HelpFacul",
-    description: "University platform connecting students with private tutors for peer-to-peer learning.",
-    longDescription:
-      "A web platform developed as a university project that enables students to promote themselves as private tutors. Features include tutor profiles, subject filtering, scheduling, and a review system to help students find the right help.",
-    technologies: ["TypeScript", "React", "Next.js", "PostgreSQL", "Tailwind CSS"],
-    features: [
-      "Tutor profile creation and management",
-      "Subject and skill filtering",
-      "Student-tutor matching",
-      "Review and rating system",
-    ],
-    category: "web",
-    githubUrl: "https://github.com/Luisotee/HelpFacul",
   },
 ]
 
