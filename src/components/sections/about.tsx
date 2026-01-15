@@ -12,10 +12,12 @@ const techStack = {
     "Next.js",
     "TypeScript",
     "Tailwind CSS",
+    "shadcn/ui",
   ],
   "Backend": [
     "Node.js",
     "Express",
+    "Fastify",
     "Python",
     "PostgreSQL",
     "MongoDB",
@@ -89,17 +91,17 @@ export function About() {
           >
             <p className="text-lg text-muted-foreground leading-relaxed">
               I&apos;m a Full Stack Developer and AI Engineer based in Germany, originally
-              from Brazil. With a background in Computer Engineering and ongoing studies
-              in System Development, I specialize in building AI-powered applications
-              and LLM-based solutions.
+              from Brazil. With a degree in Computer Engineering and ongoing studies
+              in System Development, I specialize in building scalable web applications
+              and integrating AI to solve real-world problems.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I specialize in building enterprise platforms with AI-powered content generation,
-              leveraging{" "}
-              <span className="text-foreground font-medium">LangChain</span>,{" "}
-              <span className="text-foreground font-medium">Next.js</span>, and{" "}
-              <span className="text-foreground font-medium">Node.js</span> to create
-              intelligent chatbots and web applications.
+              I build everything from{" "}
+              <span className="text-foreground font-medium">responsive frontends</span> to{" "}
+              <span className="text-foreground font-medium">robust backend systems</span>,
+              with a focus on delivering polished user experiences. My recent work spans
+              enterprise platforms, custom CRMs, and AI-powered applications, from LLM
+              integrations to autonomous agents.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               I&apos;m an active open source contributor, with projects like the WhatsApp

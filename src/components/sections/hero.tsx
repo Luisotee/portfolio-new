@@ -1,21 +1,23 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { motion } from "framer-motion";
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const roles = [
   "Full Stack Developer",
   "AI Engineer",
+  "Backend Developer",
+  "Frontend Developer",
   "Open Source Contributor",
   "LLM Specialist",
-]
+];
 
 const socialLinks = [
   { href: "https://github.com/Luisotee", icon: Github, label: "GitHub" },
   { href: "https://linkedin.com/in/luisotee", icon: Linkedin, label: "LinkedIn" },
   { href: "mailto:luisotaviomgrcont@gmail.com", icon: Mail, label: "Email" },
-]
+];
 
 export function Hero() {
   return (
@@ -79,12 +81,12 @@ export function Hero() {
             className="h-12 md:h-14 mb-8 overflow-hidden"
           >
             <motion.div
-              animate={{ y: [0, -48, -96, -144, 0] }}
+              animate={{ y: [0, -48, -96, -144, -192, -240, 0] }}
               transition={{
-                duration: 8,
+                duration: 12,
                 repeat: Infinity,
                 ease: "easeInOut",
-                times: [0, 0.25, 0.5, 0.75, 1],
+                times: [0, 0.14, 0.28, 0.42, 0.57, 0.71, 1],
               }}
               className="flex flex-col"
             >
@@ -106,11 +108,10 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10"
           >
-            I build modern web applications and AI-powered solutions with{" "}
-            <span className="text-foreground font-medium">Next.js</span>,{" "}
-            <span className="text-foreground font-medium">Node.js</span>, and{" "}
-            <span className="text-foreground font-medium">LangChain</span>.
-            Specialized in LLM integrations and chatbot development.
+            I craft full-stack web applications and AI-driven products. From{" "}
+            <span className="text-foreground font-medium">enterprise platforms</span> to{" "}
+            <span className="text-foreground font-medium">intelligent chatbots</span>, I
+            turn complex ideas into elegant solutions.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -173,5 +174,5 @@ export function Hero() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

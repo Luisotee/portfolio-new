@@ -2,14 +2,22 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ExternalLink, Github, Play, X, Star } from "lucide-react"
+import { ExternalLink, Github, X, Star, Brain, Globe, Smartphone, FolderCode } from "lucide-react"
 import { SectionHeading } from "@/components/shared/section-heading"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { projects, projectCategories, type Project } from "@/data/projects"
 
+const categoryIcons = {
+  ai: Brain,
+  web: Globe,
+  mobile: Smartphone,
+  other: FolderCode,
+}
+
 function ProjectCard({ project, onClick }: { project: Project; onClick: () => void }) {
+  const CategoryIcon = categoryIcons[project.category]
   return (
     <motion.div
       layout
@@ -23,9 +31,9 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: () => vo
         onClick={onClick}
       >
         {/* Preview Area */}
-        <div className="relative h-48 bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center overflow-hidden">
+        <div className="relative h-48 bg-gradient-to-br from-purple-900/50 to-blue-900/50 flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          <Play className="w-12 h-12 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
+          <CategoryIcon className="w-12 h-12 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
           <motion.div
             className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
             initial={false}
@@ -69,6 +77,7 @@ function ProjectCard({ project, onClick }: { project: Project; onClick: () => vo
 }
 
 function ProjectModal({ project, onClose }: { project: Project; onClose: () => void }) {
+  const CategoryIcon = categoryIcons[project.category]
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -93,21 +102,19 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
           <X className="w-5 h-5" />
         </button>
 
-        {/* Demo Preview */}
+        {/* Category Preview */}
         <div className="relative h-64 md:h-80 bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center">
-          {project.demoUrl ? (
-            <div className="text-center">
-              <Play className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
-              <p className="text-muted-foreground">Interactive demo available</p>
+          <div className="text-center">
+            <div className="w-20 h-20 rounded-full gradient-bg flex items-center justify-center mx-auto mb-4">
+              <CategoryIcon className="w-10 h-10 text-white" />
             </div>
-          ) : (
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mx-auto mb-4">
-                <Github className="w-8 h-8 text-white" />
-              </div>
-              <p className="text-muted-foreground">View source code on GitHub</p>
-            </div>
-          )}
+            <p className="text-muted-foreground">
+              {project.category === "ai" && "AI / Machine Learning"}
+              {project.category === "web" && "Web Application"}
+              {project.category === "mobile" && "Mobile Application"}
+              {project.category === "other" && "Software Project"}
+            </p>
+          </div>
         </div>
 
         {/* Content */}
