@@ -87,7 +87,7 @@ export function Header() {
 
             {/* Resume Button */}
             <Button asChild className="hidden sm:inline-flex gradient-bg hover:opacity-90 text-white border-0">
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+              <a href="https://cdn.jsdelivr.net/gh/Luisotee/Resume@main/resume.pdf" target="_blank" rel="noopener noreferrer">
                 Resume
               </a>
             </Button>
@@ -130,7 +130,7 @@ export function Header() {
                 </a>
               ))}
               <Button asChild className="gradient-bg hover:opacity-90 text-white border-0 w-full">
-                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="https://cdn.jsdelivr.net/gh/Luisotee/Resume@main/resume.pdf" target="_blank" rel="noopener noreferrer">
                   Resume
                 </a>
               </Button>
