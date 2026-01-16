@@ -82,6 +82,24 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Luisotee/earth-defenders-assistant",
     isSocialImpact: true,
   },
+  {
+    id: "mulheres-rurais",
+    title: "Mulheres Rurais de Sergipe",
+    description: "Platform empowering rural women artisans with voice-enabled product registration using STT/TTS chatbot.",
+    longDescription:
+      "Digital platform for the Rural Women Workers Movement of Sergipe, Brazil, connecting rural women producers with consumers. Features a voice-enabled chatbot using Typebot with speech-to-text and text-to-speech technology, making it accessible for women with limited digital literacy to register and sell their artisanal products.",
+    technologies: ["Next.js", "TypeScript", "Node.js", "Prisma", "SQLite", "Typebot", "Docker"],
+    features: [
+      "Voice-enabled chatbot with STT/TTS for accessible product registration",
+      "Direct marketplace connecting rural producers to consumers",
+      "Showcases artisanal products from women in rural Sergipe",
+      "Open source with 400+ commits and community contributions",
+    ],
+    category: "web",
+    demoUrl: "https://mulheresrurais.com.br/",
+    githubUrl: "https://github.com/catuaba07/do-quintal-a-cozinha",
+    isSocialImpact: true,
+  },
 ]
 
 export const projectCategories = [

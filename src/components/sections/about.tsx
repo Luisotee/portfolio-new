@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { SectionHeading } from "@/components/shared/section-heading"
 import { Badge } from "@/components/ui/badge"
-import { GraduationCap } from "lucide-react"
+import { GraduationCap, MapPin } from "lucide-react"
 
 const techStack = {
   "Frontend": [
@@ -79,6 +79,17 @@ export function About() {
           title="About Me"
           subtitle="A passionate developer who loves building things that live on the internet"
         />
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex items-center justify-center gap-2 text-muted-foreground mb-12"
+        >
+          <MapPin className="w-5 h-5" />
+          <span>Germany - Open to Remote & Relocation</span>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
           {/* Bio */}

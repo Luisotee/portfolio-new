@@ -17,7 +17,7 @@ import { SectionHeading } from "@/components/shared/section-heading";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { projects, projectCategories, type Project } from "@/data/projects";
+import { projects, type Project } from "@/data/projects";
 
 const categoryIcons = {
   ai: Brain,
@@ -204,13 +204,7 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
 }
 
 export function Projects() {
-  const [activeCategory, setActiveCategory] = useState<string>("all");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-
-  const filteredProjects =
-    activeCategory === "all"
-      ? projects
-      : projects.filter((p) => p.category === activeCategory);
 
   return (
     <section id="projects" className="py-20 md:py-32">
@@ -220,30 +214,13 @@ export function Projects() {
           subtitle="A selection of my recent work and personal projects"
         />
 
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {projectCategories.map((category) => (
-            <Button
-              key={category.value}
-              variant={activeCategory === category.value ? "default" : "outline"}
-              size="sm"
-              onClick={() => setActiveCategory(category.value)}
-              className={
-                activeCategory === category.value ? "gradient-bg text-white border-0" : ""
-              }
-            >
-              {category.label}
-            </Button>
-          ))}
-        </div>
-
         {/* Projects Grid */}
         <motion.div
           layout
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
         >
           <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project) => (
+            {projects.map((project) => (
               <ProjectCard
                 key={project.id}
                 project={project}

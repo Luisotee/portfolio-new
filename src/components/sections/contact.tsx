@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Mail, Github, Linkedin, MapPin, ArrowUpRight } from "lucide-react"
+import { Mail, Github, Linkedin, ArrowUpRight } from "lucide-react"
 import { SectionHeading } from "@/components/shared/section-heading"
 import { Card, CardContent } from "@/components/ui/card"
 
@@ -54,18 +54,6 @@ export function Contact() {
         />
 
         <div className="max-w-4xl mx-auto">
-          {/* Location */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="flex items-center justify-center gap-2 text-muted-foreground mb-12"
-          >
-            <MapPin className="w-5 h-5" />
-            <span>Germany - Open to Remote Work Worldwide</span>
-          </motion.div>
-
           {/* Contact Links */}
           <motion.div
             variants={containerVariants}
