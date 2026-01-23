@@ -35,9 +35,9 @@ export const projects: Project[] = [
   {
     id: "ai-personal-assistant",
     title: "AI Personal Assistant",
-    description: "Production-ready AI agent with persistent memory, RAG-powered knowledge base, multi-language speech processing, and comprehensive finance management.",
+    description: "Production-ready multi-client AI agent with persistent memory, RAG-powered knowledge base, multi-language speech processing, and comprehensive finance management.",
     longDescription:
-      "A production-ready personal AI assistant that integrates conversational AI with WhatsApp, featuring persistent memory, RAG-powered knowledge base with PDF uploads, and multi-language speech processing across 5 languages. Includes a comprehensive real-time finance dashboard with transaction tracking, multi-currency support, and analytics visualizations. Built with a modern full-stack architecture combining Python FastAPI backend, Next.js frontend, and PostgreSQL with pgvector for semantic search.",
+      "A production-ready personal AI assistant with multi-client architecture, featuring persistent memory, RAG-powered knowledge base with PDF uploads, and multi-language speech processing across 5 languages. Currently integrated with WhatsApp, with extensible design for additional messaging platforms. Includes a comprehensive real-time finance dashboard with transaction tracking, multi-currency support, and analytics visualizations. Built with a modern full-stack architecture combining Python FastAPI backend, Next.js frontend, and PostgreSQL with pgvector for semantic search.",
     demoUrl: "https://finance.luisotee.com/",
     technologies: ["Python", "FastAPI", "TypeScript", "Next.js", "PostgreSQL", "pgvector", "Gemini", "Groq Whisper", "Docker", "Redis", "Baileys", "Tailwind CSS", "Recharts"],
     features: [
@@ -49,11 +49,33 @@ export const projects: Project[] = [
       "Multi-currency support with automatic conversion and live exchange rates",
       "Spending analytics with trends, category breakdowns, and cash flow analysis",
       "Multi-language speech processing (STT/TTS) in 5 languages",
-      "WhatsApp integration with group chat, media handling, and voice messages",
+      "Multi-client architecture with WhatsApp integration (group chat, media, voice)",
       "Automated notification processing for financial alerts and updates",
     ],
     category: "ai",
     githubUrl: "https://github.com/Luisotee/ai-personal-assistant",
+  },
+  {
+    id: "ai-boilerplate",
+    title: "AI Agent Boilerplate",
+    description: "Production-ready multi-client boilerplate for building conversational AI agents with memory, RAG knowledge base, and multi-language speech processing.",
+    longDescription:
+      "A comprehensive, production-ready boilerplate framework for building sophisticated multi-client AI agents. Features modular architecture with dependency injection, persistent conversation memory with semantic search, RAG-powered knowledge base with PDF processing, and multi-language speech capabilities. Designed with extensibility for multiple messaging platforms and used as the foundation for production applications. Includes complete API documentation, background job processing with Redis Streams, and graceful service degradation.",
+    technologies: ["Python", "FastAPI", "TypeScript", "Fastify", "Baileys", "PostgreSQL", "pgvector", "Gemini", "Groq Whisper", "Docker", "Redis", "Pydantic AI"],
+    features: [
+      "Multi-client architecture designed for extensibility across messaging platforms",
+      "Production-ready design with dependency injection and modular components",
+      "Persistent conversation memory with PostgreSQL and semantic search",
+      "RAG knowledge base with PDF uploads, semantic chunking, and auto-citations",
+      "Multi-language speech processing (STT/TTS) in 5 languages",
+      "WhatsApp client implementation with group chat, media, and voice support",
+      "Server-Sent Events for real-time streaming responses",
+      "Background job processing with Redis Streams consumer groups",
+      "Comprehensive API with OpenAPI docs and admin tools (Adminer)",
+      "MIT licensed and designed for extensibility",
+    ],
+    category: "ai",
+    githubUrl: "https://github.com/Luisotee/ai-boilerplate",
   },
   {
     id: "langchainjs-contribution",
