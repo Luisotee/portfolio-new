@@ -37,9 +37,9 @@ export const experiences: Experience[] = [
     achievements: [
       "Led IT infrastructure and developed full-stack web platform with React, Next.js, and Tailwind CSS",
       "Designed and shipped custom CRM from scratch, eliminating dependency on third-party automation tools",
-      "Built and deployed company-wide chatbot, becoming the primary tool for internal knowledge sharing",
+      "Built and deployed company-wide chatbot using Zapier, Make, and n8n workflows, becoming the primary tool for internal knowledge sharing",
     ],
-    technologies: ["React", "Next.js", "Tailwind CSS", "Supabase", "Chatbots", "AI/LLMs"],
+    technologies: ["React", "Next.js", "Tailwind CSS", "Supabase", "Chatbots", "AI/LLMs", "Zapier", "Make", "n8n"],
   },
   {
     id: "awana-digital",
