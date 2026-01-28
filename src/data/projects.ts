@@ -96,18 +96,36 @@ export const projects: Project[] = [
   {
     id: "earth-defenders",
     title: "Earth Defenders Assistant",
-    description: "AI tools for environmental conservation, supporting indigenous communities with offline-capable assistants.",
+    description: "Audio-first AI platform for environmental defenders with offline capability and flexible plugin architecture.",
     longDescription:
-      "Developed AI tools for environmental conservation, creating audio-first AI assistants that work offline to support indigenous communities and environmental defenders in remote areas. Won 3rd place in Amazon Challenge, securing R$ 100,000 in funding.",
+      "Platform for creating audio-first AI assistants that work offline, built at Awana Digital for Digital Democracy. Features a flexible plugin architecture enabling environmental defenders and indigenous communities in remote areas to access AI tools without internet connectivity.",
     technologies: ["Python", "LangChain", "Smolagents", "Mem0", "Offline AI"],
     features: [
-      "Built offline-capable AI assistants for areas with limited connectivity",
-      "Won 3rd place in Amazon Challenge, securing R$ 100,000 in funding",
-      "Created tools for indigenous communities to document environmental threats",
-      "Developed multi-language support for diverse communities",
+      "Audio-first design for accessibility in diverse communities",
+      "Offline-capable AI assistants for areas with limited connectivity",
+      "Flexible plugin architecture for extensibility",
+      "Multi-language support for indigenous communities",
     ],
     category: "ai",
-    githubUrl: "https://github.com/Luisotee/earth-defenders-assistant",
+    githubUrl: "https://github.com/digidem/earth-defenders-assistant",
+    stars: 13,
+    isSocialImpact: true,
+  },
+  {
+    id: "terra-krya-whatsapp",
+    title: "Terra Krya WhatsApp Integration",
+    description: "Amazon Challenge winner: WhatsApp chatbot integrating environmental defense tools for Amazon communities.",
+    longDescription:
+      "WhatsApp chatbot built on Turn.io that unified environmental defense tools for Amazon communities. Integrated CoMapeo (territory monitoring), Caminho do Fogo (fire alerts), and Inteligência Econômica into a single conversational interface. Won 3rd place in the Amazon Challenge, securing R$100,000 in funding.",
+    technologies: ["Python", "Turn.io", "WhatsApp API", "AI/LLMs", "CoMapeo", "Caminho do Fogo"],
+    features: [
+      "Won 3rd place in Amazon Challenge, securing R$100,000 in funding",
+      "Integrated CoMapeo for territory monitoring and mapping",
+      "Connected Caminho do Fogo for fire prevention alerts",
+      "Unified Inteligência Econômica for economic intelligence",
+      "Built on Turn.io for scalable WhatsApp delivery",
+    ],
+    category: "ai",
     isSocialImpact: true,
   },
   {
