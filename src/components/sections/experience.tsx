@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import Image from "next/image"
 import { ChevronDown, MapPin, Calendar, Building2 } from "lucide-react"
 import { SectionHeading } from "@/components/shared/section-heading"
 import { Badge } from "@/components/ui/badge"
@@ -27,9 +28,20 @@ function ExperienceCard({ experience, index }: { experience: Experience; index: 
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
             <div className="flex items-start gap-4">
               {/* Company Icon */}
-              <div className="w-12 h-12 rounded-lg gradient-bg flex items-center justify-center flex-shrink-0">
-                <Building2 className="w-6 h-6 text-white" />
-              </div>
+              {experience.logo ? (
+                <div className="w-12 h-12 rounded-lg bg-white border border-border flex-shrink-0 overflow-hidden relative">
+                  <Image
+                    src={experience.logo}
+                    alt={`${experience.company} logo`}
+                    fill
+                    className={experience.logo.endsWith(".svg") ? "object-contain p-1.5" : "object-cover"}
+                  />
+                </div>
+              ) : (
+                <div className="w-12 h-12 rounded-lg gradient-bg flex items-center justify-center flex-shrink-0">
+                  <Building2 className="w-6 h-6 text-white" />
+                </div>
+              )}
 
               <div>
                 <h3 className="text-xl font-semibold">{experience.role}</h3>
